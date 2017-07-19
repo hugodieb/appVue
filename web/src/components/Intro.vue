@@ -3,7 +3,7 @@
   	<p>
   		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dictum ut nisi sed porta.
       Pellentesque in dolor ipsum. In bibendum odio leo, a aliquet lacus euismod ac.
-      Vivamus ac tortor est. 
+      Vivamus ac tortor est.
   	</p>
   </div>
 </template>

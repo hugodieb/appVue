@@ -1,7 +1,16 @@
 import Vue from 'vue'
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.css'
 import App from './App'
 
-Vue.config.productionTip = false
+Vue.use(VueMaterial)
+
+Vue.material.registerTheme('default', {
+  primary: 'blue',
+  accent: 'red',
+  warn: 'red',
+  background: 'grey'
+})
 
 /* eslint-disable no-new */
 new Vue({
