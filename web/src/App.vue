@@ -5,33 +5,34 @@
       <md-icon>menu</md-icon>
     </md-button>
 
-    <h2 class="md-title">My App</h2>
-  </md-toolbar>
+    <h2 class="md-title">{{title}}</h2>
 
-  <div>
-    <md-button class="md-raised md-accent" @click="toggleRightSidenav">Toggle right</md-button>
-    <p>Open console to see the events</p>
-  </div>
+  </md-toolbar>
 
   <md-sidenav class="md-left" ref="leftSidenav" @open="open('Left')" @close="close('Left')">
     <md-toolbar class="md-large">
       <div class="md-toolbar-container">
-        <h3 class="md-title">Sidenav content</h3>
+        <h3 class="md-title">Navegação</h3>
       </div>
+      <md-list>
+        <md-list-item>
+          Perfil
+        </md-list-item>
+        <md-list-item>
+          <router-link to="/categories">Categoria</router-link>
+        </md-list-item>
+        <md-list-item>
+          <router-link to="/products">Produtos</router-link>
+        </md-list-item>
+        <md-list-item>
+          Sair
+        </md-list-item>
+      </md-list>
     </md-toolbar>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate esse necessitatibus beatae nobis, deserunt ut est fugit, tempora deleniti, eligendi commodi doloribus. Nemo, assumenda possimus, impedit inventore perferendis iusto!</p>
   </md-sidenav>
-
-  <md-sidenav class="md-right" ref="rightSidenav" @open="open('Right')" @close="close('Right')">
-    <md-toolbar>
-      <div class="md-toolbar-container">
-        <h3 class="md-title">Sidenav content</h3>
-      </div>
-    </md-toolbar>
-
-    <md-button class="md-raised md-accent" @click="closeRightSidenav">Close</md-button>
-  </md-sidenav>
+  <md-row>
+    <router-view></router-view>
+  </md-row>
 </div>
 </template>
 
@@ -49,12 +50,6 @@ export default {
   methods: {
     toggleLeftSidenav () {
       this.$refs.leftSidenav.toggle()
-    },
-    toggleRightSidenav () {
-      this.$refs.rightSidenav.toggle()
-    },
-    closeRightSidenav () {
-      this.$refs.rightSidenav.close()
     }
   }
 }
